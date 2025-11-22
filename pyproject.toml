@@ -1,0 +1,15 @@
+[project]
+name = "aiagents101"
+version = "0.1.0"
+description = "Beginner series for building AI agents"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "openai-agents",
+    "dotenv",
+    "openai-agents[litellm]",
+    "fastapi",
+    "uvicorn",
+    "scalar-fastapi",
+    "pydantic_ai",
+]
