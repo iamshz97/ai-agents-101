@@ -12,4 +12,6 @@ dependencies = [
     "uvicorn",
     "scalar-fastapi",
     "pydantic_ai",
+    "flask-socketio",
+    "streamlit",
 ]

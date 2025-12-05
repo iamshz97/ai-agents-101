@@ -1,0 +1,18 @@
+<script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+<script>
+    const socket = io('http://localhost:5000');
+
+    socket.on('connect', function () {
+        console.log('Connected to server');
+    });
+
+    socket.on('message', function (msg) {
+        console.log('Message:', msg);
+    });
+
+    // Send message
+    socket.send('Hello server!');
+
+    // Custom event
+    socket.emit('custom_event', { data: 'test' });
+</script>
