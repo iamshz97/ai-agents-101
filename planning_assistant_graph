@@ -1,0 +1,44 @@
+
+    digraph G {
+        graph [splines=true];
+        node [fontname="Arial"];
+        edge [penwidth=1.5];
+    "__start__" [label="__start__", shape=ellipse, style=filled, fillcolor=lightblue, width=0.5, height=0.3];"__end__" [label="__end__", shape=ellipse, style=filled, fillcolor=lightblue, width=0.5, height=0.3];"ConflictOrchestrator" [label="ConflictOrchestrator", shape=box, style=filled, fillcolor=lightyellow, width=1.5, height=0.8];"get_todays_date" [label="get_todays_date", shape=ellipse, style=filled, fillcolor=lightgreen, width=0.5, height=0.3];"save_event_context" [label="save_event_context", shape=ellipse, style=filled, fillcolor=lightgreen, width=0.5, height=0.3];"NegotiatorAgent" [label="NegotiatorAgent", shape=box, style=filled, style=rounded, fillcolor=lightyellow, width=1.5, height=0.8];"save_event_context" [label="save_event_context", shape=ellipse, style=filled, fillcolor=lightgreen, width=0.5, height=0.3];"get_event_context" [label="get_event_context", shape=ellipse, style=filled, fillcolor=lightgreen, width=0.5, height=0.3];"get_user_routine" [label="get_user_routine", shape=ellipse, style=filled, fillcolor=lightgreen, width=0.5, height=0.3];"GoogleCalendar" [label="GoogleCalendar", shape=box, style=filled, fillcolor=lightgrey, width=1, height=0.5];"PlanningOrchestrator" [label="PlanningOrchestrator", shape=box, style=filled, style=rounded, fillcolor=lightyellow, width=1.5, height=0.8];"get_user_routine" [label="get_user_routine", shape=ellipse, style=filled, fillcolor=lightgreen, width=0.5, height=0.3];"save_event_context" [label="save_event_context", shape=ellipse, style=filled, fillcolor=lightgreen, width=0.5, height=0.3];"get_event_context" [label="get_event_context", shape=ellipse, style=filled, fillcolor=lightgreen, width=0.5, height=0.3];"get_todays_date" [label="get_todays_date", shape=ellipse, style=filled, fillcolor=lightgreen, width=0.5, height=0.3];"ReviewerAgent" [label="ReviewerAgent", shape=box, style=filled, style=rounded, fillcolor=lightyellow, width=1.5, height=0.8];"get_event_context" [label="get_event_context", shape=ellipse, style=filled, fillcolor=lightgreen, width=0.5, height=0.3];"get_user_routine" [label="get_user_routine", shape=ellipse, style=filled, fillcolor=lightgreen, width=0.5, height=0.3];"CalendarAgent" [label="CalendarAgent", shape=box, style=filled, style=rounded, fillcolor=lightyellow, width=1.5, height=0.8];"get_event_context" [label="get_event_context", shape=ellipse, style=filled, fillcolor=lightgreen, width=0.5, height=0.3];"get_user_routine" [label="get_user_routine", shape=ellipse, style=filled, fillcolor=lightgreen, width=0.5, height=0.3];"get_todays_date" [label="get_todays_date", shape=ellipse, style=filled, fillcolor=lightgreen, width=0.5, height=0.3];"GoogleCalendar" [label="GoogleCalendar", shape=box, style=filled, fillcolor=lightgrey, width=1, height=0.5];"__start__" -> "ConflictOrchestrator";
+        "ConflictOrchestrator" -> "get_todays_date" [style=dotted, penwidth=1.5];
+        "get_todays_date" -> "ConflictOrchestrator" [style=dotted, penwidth=1.5];
+        "ConflictOrchestrator" -> "save_event_context" [style=dotted, penwidth=1.5];
+        "save_event_context" -> "ConflictOrchestrator" [style=dotted, penwidth=1.5];
+            "ConflictOrchestrator" -> "NegotiatorAgent";
+        "NegotiatorAgent" -> "save_event_context" [style=dotted, penwidth=1.5];
+        "save_event_context" -> "NegotiatorAgent" [style=dotted, penwidth=1.5];
+        "NegotiatorAgent" -> "get_event_context" [style=dotted, penwidth=1.5];
+        "get_event_context" -> "NegotiatorAgent" [style=dotted, penwidth=1.5];
+        "NegotiatorAgent" -> "get_user_routine" [style=dotted, penwidth=1.5];
+        "get_user_routine" -> "NegotiatorAgent" [style=dotted, penwidth=1.5];
+        "NegotiatorAgent" -> "GoogleCalendar" [style=dashed, penwidth=1.5];
+        "GoogleCalendar" -> "NegotiatorAgent" [style=dashed, penwidth=1.5];
+            "NegotiatorAgent" -> "PlanningOrchestrator";
+        "PlanningOrchestrator" -> "get_user_routine" [style=dotted, penwidth=1.5];
+        "get_user_routine" -> "PlanningOrchestrator" [style=dotted, penwidth=1.5];
+        "PlanningOrchestrator" -> "save_event_context" [style=dotted, penwidth=1.5];
+        "save_event_context" -> "PlanningOrchestrator" [style=dotted, penwidth=1.5];
+        "PlanningOrchestrator" -> "get_event_context" [style=dotted, penwidth=1.5];
+        "get_event_context" -> "PlanningOrchestrator" [style=dotted, penwidth=1.5];
+        "PlanningOrchestrator" -> "get_todays_date" [style=dotted, penwidth=1.5];
+        "get_todays_date" -> "PlanningOrchestrator" [style=dotted, penwidth=1.5];
+            "PlanningOrchestrator" -> "ReviewerAgent";
+        "ReviewerAgent" -> "get_event_context" [style=dotted, penwidth=1.5];
+        "get_event_context" -> "ReviewerAgent" [style=dotted, penwidth=1.5];
+        "ReviewerAgent" -> "get_user_routine" [style=dotted, penwidth=1.5];
+        "get_user_routine" -> "ReviewerAgent" [style=dotted, penwidth=1.5];
+            "ReviewerAgent" -> "CalendarAgent";
+        "CalendarAgent" -> "get_event_context" [style=dotted, penwidth=1.5];
+        "get_event_context" -> "CalendarAgent" [style=dotted, penwidth=1.5];
+        "CalendarAgent" -> "get_user_routine" [style=dotted, penwidth=1.5];
+        "get_user_routine" -> "CalendarAgent" [style=dotted, penwidth=1.5];
+        "CalendarAgent" -> "get_todays_date" [style=dotted, penwidth=1.5];
+        "get_todays_date" -> "CalendarAgent" [style=dotted, penwidth=1.5];
+        "CalendarAgent" -> "GoogleCalendar" [style=dashed, penwidth=1.5];
+        "GoogleCalendar" -> "CalendarAgent" [style=dashed, penwidth=1.5];"CalendarAgent" -> "__end__";
+            "ReviewerAgent" -> "PlanningOrchestrator";
+            "ConflictOrchestrator" -> "PlanningOrchestrator";}
